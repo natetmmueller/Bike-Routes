@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+
+    <h1>Route Name: <%= routes.routeName %></h1>
+    <br>
+    <h4>Distance (km): <%= routes.distance %></h4>
+    <br>
+    <h4>Elevation (m): <%= routes.elevation %></h4>
+    <br>
+    <h4>Time (mins): <%= routes.timeItTakes %></h4>
+    <br>
+    <h4>Starting Address: <%= routes.sAddress %></h4>
+    <br>
+    <h4>Finishing Address: <%= routes.fAddress %></h4>
+    <br>
+    <h4>Made by: <%= routes.user.firstName %></h4>
+
+
+    <h4>Comments:</h4>
+
+    <br>
+    <% if (routes.comments.length) { %>  
+        <% routes.comments.forEach((c) => { %>
+            <td> <%= c.user.firstName%></td>
+            <td> <%= c.comment%></td>
+        <% }) %>
+
+        <% } else { %>
+            <h6>No Comments Available</h6>
+    <% }%>
+
+    <br>
+
+    <form method="post" action="/routes/<%= routes.id %>/comments">
+
+        <label>Comment:</label>
+        <textarea name="comment"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+    
+
+<%- include('../partials/footer') %>

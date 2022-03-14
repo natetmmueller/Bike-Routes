@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+    <div class="container">
+        <h1> Bike Routes</h1> <a href="/" class="btn btn-warning">Home</a>
+        <a href="new" class="btn btn-warning">Add A New Route</a>
+        <br>
+        <br>
+
+
+        <br>
+            <% routes.forEach(function(route) { %>
+                <div class="card"> 
+                    <td>Route Name:<%=route.routeName%></td>
+                    <br>
+                    <td>Distance (km):<%=route.distance%></td>
+                    <br>
+                    <td>Elevation (m):<%=route.elevation%></td>
+                    <br>
+                    <td>Time it takes (min):<%=route.timeItTakes%></td>
+                    <br>
+                    <td>Starting Adress:<%=route.sAddress%></td>
+                    <br>
+                    <td>finishing Adress:<%=route.fAddress%></td>
+                    <br>
+                    <td>User:<%=route.user%></td>
+
+                    <td><a href="/routes/<%= route.id %>">Learn More</a></td>
+                    <td><a href="/routes/delete/<%= route.id %>">Remove Route</a></td>
+                </div>
+            <% }); %>
+            <br>
+            
+        
+    </div>
+    
+<%- include('../partials/footer') %>
