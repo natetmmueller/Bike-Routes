@@ -1,6 +1,9 @@
 const express = require('express');
 
+
 const router = express.Router();
+
+
 
 const routesCntrl = require('../controllers/routes');
 const isLoggedIn = require('../helper/isLoggedIn');
@@ -13,9 +16,16 @@ router.get('/routes/new', isLoggedIn, routesCntrl.new);
 
 router.post('/routes/all', isLoggedIn, routesCntrl.addRoute);
 
-router.get('/routes/:id',isLoggedIn, routesCntrl.showRoute);
+router.put('/routes/all', routesCntrl.postEdit);
+
+router.get('/routes/delete/:id', routesCntrl.deleteRoute);
+
+router.get('/routes/edit/:id',routesCntrl.getEdit);
+
+router.get('/routes/:id', isLoggedIn, routesCntrl.showRoute);
 
 router.post('/routes/:id/comments', isLoggedIn, routesCntrl.addComment)
 
+//add this to 12, 14, 16, 18: isLoggedIn,
 
 module.exports = router;

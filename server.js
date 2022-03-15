@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config()
+const methodOverride = require('method-override')
 
 
 const PORT = process.env.PORT;
@@ -14,10 +15,9 @@ app.use(express.static("public"));
 let session = require('express-session')
 let passport = require('./helper/passportConfig')
 
-//import routes
-const homeRoute = require('./routes/home');
-const routesRoute = require('./routes/routes');
-const authRoute = require('./routes/auth');
+app.use(methodOverride('_method'))
+
+
 
 app.use(session({
     secret: process.env.secret,
@@ -28,6 +28,11 @@ app.use(session({
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+//import routes
+const homeRoute = require('./routes/home');
+const routesRoute = require('./routes/routes');
+const authRoute = require('./routes/auth');
 
 //mount routes
 app.use('/', homeRoute);

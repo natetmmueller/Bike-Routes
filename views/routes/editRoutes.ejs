@@ -1,53 +1,54 @@
 <%- include('../partials/header') %>
 
-    <h1>Add A Route</h1>
+    <h1>Edit Route</h1>
 
-    <form method="post" action="/routes/all">
+    <form method="post" action="/routes/all?_method=PUT">
 
         <div class="form-group">
             <label>Route Name: </label>
-            <input type="text" name="routeName">
+            <input type="text" name="routeName" value="<%= routes.routeName%>">
         </div>
 
         <br>
 
         <div class="form-group">
             <label>Distance (km): </label>
-            <input type="number" name="distance">
+            <input type="number" name="distance" value="<%= routes.distance%>">
         </div>
 
         <br>
 
         <div class="form-group">
             <label>Elevation (m): </label>
-            <input type="number" name="elevation">
+            <input type="number" name="elevation" value="<%= routes.elevation%>">
         </div>
 
         <br>
 
         <div class="form-group">
             <label>Time it takes (min): </label>
-            <input type="number" name="timeItTakes">
+            <input type="number" name="timeItTakes" value="<%= routes.timeItTakes%>">
         </div>
 
         <br>
 
         <div class="form-group">
             <label>Starting Address: </label>
-            <input type="text" name="sAddress">
+            <input type="text" name="sAddress" value="<%= routes.sAddress%>">
         </div>
 
         <br>
 
         <div class="form-group">
             <label>Finishing Address: </label>
-            <input type="text" name="fAddress">
+            <input type="text" name="fAddress" value="<%= routes.fAddress%>">
         </div>
         <br>
 
 
+        <input type="text" name="id" value="<%= routes.id%>" hidden>
 
-        <button type="submit">Create Route</button>
+        <button type="submit" class="btn btn-dark">Edit Route</button>
 
 
     </form>

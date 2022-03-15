@@ -31,10 +31,35 @@ async function addComment(req, res) {
     res.redirect(`/routes/${req.params.id}`)
 }
 
+
+async function getEdit(req, res){
+   let routes =  await Routes.findById(req.params.id)
+        res.render('routes/editRoutes', {routes})
+}
+
+async function postEdit(req, res) {
+    console.log(req.body)
+   let update = await Routes.findByIdAndUpdate(req.body.id, req.body)
+   console.log(`its working ${update}`)
+    res.redirect("/routes/all")
+
+}
+
+async function deleteRoute(req, res) {
+    await Routes.findByIdAndDelete(req.params.id)
+    res.redirect("/routes/all")
+    
+}
+
+
 module.exports = {
     get,
     new: newRoutesForm,
     addRoute,
     showRoute,
-    addComment
+    addComment,
+    getEdit,
+    postEdit,
+    deleteRoute,
+    
 }

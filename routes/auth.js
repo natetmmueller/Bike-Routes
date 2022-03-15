@@ -14,7 +14,7 @@ router.post('/auth/signup', authCtrl.authCreate)
 router.get('/auth/signin', authCtrl.loginPage)
 router.post('/auth/signin', passport.authenticate('local', {
     successRedirect:'/routes/all',
-    failureRedirect:'/auth/login'
+    failureRedirect:'/auth/signin'
 }))
 
 
