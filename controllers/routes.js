@@ -1,7 +1,6 @@
 
 let Routes = require('../models/Routes')
 
-//get
 async function get(req, res){
     let routes = await Routes.find({})
     res.render('routes/allRoutes', {routes})
