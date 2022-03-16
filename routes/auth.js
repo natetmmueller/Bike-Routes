@@ -12,10 +12,13 @@ router.get('/auth/signup', authCtrl.signUp)
 router.post('/auth/signup', authCtrl.authCreate)
 
 router.get('/auth/signin', authCtrl.loginPage)
+
 router.post('/auth/signin', passport.authenticate('local', {
     successRedirect:'/routes/all',
     failureRedirect:'/auth/signin'
 }))
+
+router.get('/auth/logout', authCtrl.logout)
 
 
 

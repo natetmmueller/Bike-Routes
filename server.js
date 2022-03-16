@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 const methodOverride = require('method-override')
 
-
 const PORT = process.env.PORT;
 
 const app = express();
@@ -16,8 +15,6 @@ let session = require('express-session')
 let passport = require('./helper/passportConfig')
 
 app.use(methodOverride('_method'))
-
-
 
 app.use(session({
     secret: process.env.secret,
@@ -43,7 +40,6 @@ app.use('/', authRoute);
 //lets render look into views
 app.set('view engine', 'ejs');
 
-
 mongoose.connect(process.env.mongoDBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -51,7 +47,6 @@ mongoose.connect(process.env.mongoDBURL, {
 () => {
     console.log('mogodb has connected')
 })
-
 
 app.listen(PORT, () => console.log(`App is running on ${PORT}`));
 

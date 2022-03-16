@@ -28,8 +28,14 @@ function loginPage(req, res){
 
 //get- logout
 
+function logout(req,res){
+    req.logout()
+    res.redirect('/')
+}
+
 module.exports = {
     signUp: authSignUp,
     authCreate,
     loginPage,
+    logout
 }
