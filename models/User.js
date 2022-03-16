@@ -10,13 +10,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: [2, 'First name must be atleast 2 letters'],
-        maxlength: [30, 'This is too much man.... Chill!!']
+        maxlength: [30, 'Wow! over 30 characters, thats too much!']
     },
     lastName: {
         type: String,
         required: true,
         minlength: [2, 'First name must be atleast 2 letters'],
-        maxlength: [30, 'This is too much man.... Chill!!']
+        maxlength: [30, 'Wow! over 30 characters, thats too much!']
     },
     emailAddress: {
         type: String,

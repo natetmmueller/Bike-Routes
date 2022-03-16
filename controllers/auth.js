@@ -18,20 +18,13 @@ async function authCreate(req, res) {
     user.password = hash
 
     await user.save()
-    res.redirect('/')
+    res.redirect('/auth/signin')
 }
 
 function loginPage(req, res){
     res.render('auth/login')
 }
-//post sign in
-function login(req, res){
-    console.log('im inside my login func')
-    passport.authenticate('local', {
-        successRedirect:'/routes/allRoutes',
-        failureRedirect:'/auth/login'
-    })
-}
+
 
 //get- logout
 
@@ -39,5 +32,4 @@ module.exports = {
     signUp: authSignUp,
     authCreate,
     loginPage,
-    login
 }

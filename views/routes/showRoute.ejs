@@ -13,14 +13,14 @@
     <h4>Finishing Address: <%= routes.fAddress %></h4>
     <br>
     <h4>Made by: <%= routes.user.firstName %></h4>
-
+ <br>
+ <br>
 
     <h4>Comments:</h4>
 
-    <br>
     <% if (routes.comments.length) { %>  
         <% routes.comments.forEach((c) => { %>
-            <td> <%= c.user.firstName%></td>
+            <td> <%= c.user.firstName%>: </td>
             <td> <%= c.comment%></td>
             <br>
         <% }) %>
@@ -34,7 +34,8 @@
     <form method="post" action="/routes/<%= routes.id %>/comments">
 
         <label>Comment:</label>
-        <textarea name="comment"></textarea>
+        <input name="comment"></input>
+        <br>
         <br>
         <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>

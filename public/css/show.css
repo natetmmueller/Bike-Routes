@@ -1,0 +1,25 @@
+.route-container{
+    color: rgb(35, 101, 201);
+    
+}
+
+.showNav{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.card{
+    border-radius: 25px;
+}
+
+.headerAndButton{
+    text-align:center;
+}
+
+body{
+    background-image: url(../imgs/bikelane.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0.9;
+    
+}
