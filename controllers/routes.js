@@ -1,8 +1,11 @@
 let Routes = require('../models/Routes')
 const { route } = require('../routes/auth')
+let User = require('../models/User')
 
 async function get(req, res){
     let routes = await Routes.find({})
+    
+     
     res.render('routes/allRoutes', {routes})
 }
 
@@ -12,7 +15,7 @@ function newRoutesForm(req, res){
 
 async function addRoute (req, res){
     console.log(req.body)
-    req.body.user = req.user._id
+    req.body.user = req.user.firstName
     await Routes.create(req.body)
     res.redirect('/routes/all')
 }

@@ -17,7 +17,7 @@ const routesSchema = new Schema ({
     timeItTakes: Number,
     sAddress: String,
     fAddress: String,
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    user: String,
     comments: [commentSchema]
 },
 {
