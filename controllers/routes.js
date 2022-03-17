@@ -1,4 +1,5 @@
 let Routes = require('../models/Routes')
+const { route } = require('../routes/auth')
 
 async function get(req, res){
     let routes = await Routes.find({})
