@@ -14,7 +14,6 @@ passport.deserializeUser(function(id, done){
     })
 })
 
-
 passport.use(new LocalStrategy(
     {
         usernameField: 'emailAddress',
@@ -28,8 +27,6 @@ passport.use(new LocalStrategy(
         return done(null, user);
       });
     }
-  ));
-
-
+));
 
 module.exports = passport;

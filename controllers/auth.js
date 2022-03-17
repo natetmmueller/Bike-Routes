@@ -3,8 +3,6 @@ let bcrypt = require('bcrypt')
 let passport = require('passport')
 let salt = 14
 
-
-//get sign up
 function authSignUp(req, res){
     res.render('auth/signup')
 }
@@ -24,9 +22,6 @@ async function authCreate(req, res) {
 function loginPage(req, res){
     res.render('auth/login')
 }
-
-
-//get- logout
 
 function logout(req,res){
     req.logout()

@@ -6,9 +6,8 @@ body{
     height: 100vh;
     opacity: 0.9;
     background-position: 0px 0px;
-
-    
 }
+
 @media only screen and (min-width:1300px){
     body{
         background-position: 0px -350px;

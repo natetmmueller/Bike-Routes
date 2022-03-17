@@ -15,9 +15,7 @@
     <h4>Made by: <%= routes.user.firstName %></h4>
  <br>
  <br>
-
     <h4>Comments:</h4>
-
     <% if (routes.comments.length) { %>  
         <% routes.comments.forEach((c) => { %>
             <td> <%= c.user.firstName%>: </td>
@@ -28,9 +26,7 @@
         <% } else { %>
             <h6>No Comments Available</h6>
     <% }%>
-
     <br>
-
     <form method="post" action="/routes/<%= routes.id %>/comments">
 
         <label>Comment:</label>
@@ -40,5 +36,4 @@
         <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>
     
-
 <%- include('../partials/footer') %>

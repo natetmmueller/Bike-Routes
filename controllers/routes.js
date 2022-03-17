@@ -1,4 +1,3 @@
-
 let Routes = require('../models/Routes')
 
 async function get(req, res){
@@ -21,6 +20,7 @@ async function showRoute(req, res){
     let routes = await Routes.findById(req.params.id).populate('user')
     res.render('routes/showRoute', {routes})
 }
+
 async function addComment(req, res) {
     console.log(req.user)
     req.body.user = req.user
@@ -29,7 +29,6 @@ async function addComment(req, res) {
     await route.save()
     res.redirect(`/routes/${req.params.id}`)
 }
-
 
 async function getEdit(req, res){
    let routes =  await Routes.findById(req.params.id)
@@ -49,7 +48,6 @@ async function deleteRoute(req, res) {
     res.redirect("/routes/all")
     
 }
-
 
 module.exports = {
     get,

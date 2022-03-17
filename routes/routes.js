@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const routesCntrl = require('../controllers/routes');
+
 const isLoggedIn = require('../helper/isLoggedIn');
 
 router.get('/routes/all', routesCntrl.get);

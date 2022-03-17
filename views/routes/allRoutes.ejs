@@ -44,7 +44,6 @@
     </div>  
         <br>
         <br>
-
             <div class="d-flex justify-content-center flex-wrap bodyCards">
                 <% routes.forEach(function(route) { %>
                     <div class="card m-2" style="width: 24rem;"> 
@@ -64,8 +63,6 @@
                                 <br>
                                 <td>finishing Address: <%=route.fAddress%></td>
                             </p>
-                            
-    
                             <td><a href="/routes/<%= route.id %>" class="btn btn-outline-secondary">Learn More</a></td>
                             <td><a href="/routes/edit/<%= route.id %>" class="btn btn-outline-info">Edit Route</a></td>
                             <td><a href="/routes/delete/<%= route.id %>"  class="btn btn-outline-danger">Remove Route</a></td>
@@ -73,8 +70,6 @@
                     </div>
                 <% }); %>
                 <br>
-            </div>
-            
-    
+            </div> 
 </body>
 </html>
