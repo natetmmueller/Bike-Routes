@@ -9,12 +9,8 @@ function authSignUp(req, res){
 
 async function authCreate(req, res) {
     let user = await User(req.body)
-
     let hash = await bcrypt.hashSync(req.body.password, salt)
-    console.log(hash)
-
     user.password = hash
-
     await user.save()
     res.redirect('/auth/signin')
 }

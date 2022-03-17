@@ -4,8 +4,6 @@ let User = require('../models/User')
 
 async function get(req, res){
     let routes = await Routes.find({})
-    
-     
     res.render('routes/allRoutes', {routes})
 }
 
@@ -14,7 +12,6 @@ function newRoutesForm(req, res){
 }
 
 async function addRoute (req, res){
-    console.log(req.body)
     req.body.user = req.user.firstName
     await Routes.create(req.body)
     res.redirect('/routes/all')
@@ -26,7 +23,6 @@ async function showRoute(req, res){
 }
 
 async function addComment(req, res) {
-    console.log(req.user)
     req.body.user = req.user
     let route = await Routes.findById(req.params.id)
     route.comments.push(req.body)
@@ -40,7 +36,6 @@ async function getEdit(req, res){
 }
 
 async function postEdit(req, res) {
-    console.log(req.body)
    let update = await Routes.findByIdAndUpdate(req.body.id, req.body)
    console.log(`its working ${update}`)
     res.redirect("/routes/all")

@@ -38,6 +38,5 @@ const userSchema = new Schema({
     userSchema.methods.verifyPassword = function(password){
         return bcrypt.compareSync(password, this.password)
     }
-
-
+    
 module.exports = mongoose.model('User', userSchema);
