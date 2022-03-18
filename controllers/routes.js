@@ -37,15 +37,12 @@ async function getEdit(req, res){
 
 async function postEdit(req, res) {
    let update = await Routes.findByIdAndUpdate(req.body.id, req.body)
-   console.log(`its working ${update}`)
     res.redirect("/routes/all")
-
 }
 
 async function deleteRoute(req, res) {
     await Routes.findByIdAndDelete(req.params.id)
-    res.redirect("/routes/all")
-    
+    res.redirect("/routes/all")  
 }
 
 module.exports = {
@@ -56,6 +53,5 @@ module.exports = {
     addComment,
     getEdit,
     postEdit,
-    deleteRoute,
-    
+    deleteRoute,   
 }
