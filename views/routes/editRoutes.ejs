@@ -3,7 +3,6 @@
     <h1>Edit Route</h1>
 
     <form method="post" action="/routes/all?_method=PUT">
-
         <div class="form-group">
             <label>Route Name: </label>
             <input type="text" name="routeName" value="<%= routes.routeName%>" class="form-control">
@@ -37,7 +36,6 @@
         <input type="text" name="id" value="<%= routes.id%>" hidden>
 
         <button type="submit" class="btn btn-success">Update Route</button>
-        
     </form>
 
 <%- include('../partials/footer') %>

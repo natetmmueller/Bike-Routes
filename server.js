@@ -26,18 +26,14 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-//import routes
 const homeRoute = require('./routes/home');
 const routesRoute = require('./routes/routes');
 const authRoute = require('./routes/auth');
 
-//mount routes
 app.use('/', homeRoute);
 app.use('/', routesRoute);
 app.use('/', authRoute);
 
-
-//lets render look into views
 app.set('view engine', 'ejs');
 
 mongoose.connect(process.env.mongoDBURL, {
